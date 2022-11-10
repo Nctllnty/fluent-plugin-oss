@@ -169,9 +169,9 @@ module Fluent
         super
       end
 
-      def format(tag, time, record)
-        r = inject_values_to_record(tag, time, record)
-        @formatter.format(tag, time, r)
+      def format(record)
+        r = inject_values_to_record(record)
+        @formatter.format(r)
       end
 
       def write(chunk)
